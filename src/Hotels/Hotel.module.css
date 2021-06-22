@@ -1,0 +1,21 @@
+.hotel {
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.hotel a {
+    color: rgb(80, 79, 79);
+    text-decoration: none;
+}
+
+.hotel a:hover {
+    color: #146eb4;
+}
+
+.hotel span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgb(90, 90, 90);
+    font-style: italic;
+}

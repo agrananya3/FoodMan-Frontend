@@ -1,0 +1,13 @@
+.right {
+    min-height: 31.25rem;
+    max-height: 100vh;
+    background-color: rgb(119, 214, 119);
+    overflow-y: hidden;
+    padding-top: 3rem;
+}
+
+@media only screen and (max-width: 850px) {
+    .right {
+        display: none;
+    }
+}

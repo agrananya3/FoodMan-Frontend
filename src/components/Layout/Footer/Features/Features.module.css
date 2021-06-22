@@ -1,0 +1,14 @@
+.feature {
+    padding: 40px 0;
+    display: flex;
+    word-break: break-word;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width:850px) {
+    .feature {
+        flex-direction: column;
+    }
+
+}

@@ -1,0 +1,22 @@
+.footer-wrap {
+    background-color: rgba(0, 0, 0, 0.935);
+    color: #fff;
+    text-align: center;
+    display: block;
+}
+
+.container_footer {
+    padding: 0 12px;
+    width: 100%;
+
+}
+
+.wrapper {
+    margin: 0 12%;
+}
+
+.contact {
+    padding: 32px 0;
+    border-top: 1px solid hsla(0, 0%, 100%, .1);
+
+}
