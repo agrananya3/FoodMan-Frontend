@@ -1,7 +1,7 @@
 .left {
     min-height: 31.25rem;
     max-height: 100vh;
-    background-color: aquamarine;
+    background-color: rgb(175, 218, 203);
     overflow-y: hidden;
     padding-top: 3rem;
 }

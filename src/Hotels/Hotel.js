@@ -1,19 +1,29 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { hotelchangeActions } from "../Store/hotel-slice";
+import { hotelActions } from "../Store/hotel-slice";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./Hotel.module.css";
+
 const Hotel = (props) => {
+  const hotel_id = useSelector((state) => state.hotel.hotel_id);
   const dispatch = useDispatch();
-
-  const hotelHandler = (event)=>{
+  const changeHotel = (event) => {
     event.preventDefault();
-    dispatch(hotelchangeActions.changeHotel({id:props.id,hotelname:props.name}))
-  }
-
+    dispatch(
+      hotelActions.changeHotel({ id: props.id, hotel_name: props.name })
+    );
+  };
   return (
-    <li className={styles.hotel}>
-      <a href=" " onClick={hotelHandler}>{props.name}</a>
-      <span>
+    <li className={`${styles.hotel} `}>
+      <a
+        href=" "
+        onClick={changeHotel}
+        className={`${props.id === hotel_id ? styles.active : styles.inactive}`}
+      >
+        {props.name}
+      </a>
+      <span
+        className={`${props.id === hotel_id ? styles.active : styles.inactive}`}
+      >
         <br />
         Dishes available: {props.totalDishes}
       </span>

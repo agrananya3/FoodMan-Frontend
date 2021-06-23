@@ -1,13 +1,16 @@
 import React from "react";
+import CartModal from "../../Cart/CartModal/CartModal";
 import styles from "./Navbar.module.css";
 
 // Image imports
 import logo_img from "../../../assets/delivery2.png";
 import customer_img from "../../../assets/contact2.png";
 import cart_img from "../../../assets/cart_inactive.svg";
-// import account_img from "../../../assets/account.png";
+import account_img from "../../../assets/user.svg";
+import { useSelector } from "react-redux";
 
 const Navbar = (props) => {
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   return (
     <React.Fragment>
       <header>
@@ -43,12 +46,13 @@ const Navbar = (props) => {
                 <a className={styles["navbar-link"]} href=" ">
                   <img src={cart_img} alt="Bag" />
                   Bag
+                  {totalQuantity !== 0 && <CartModal />}
                 </a>
               </div>
 
               <div>
                 <a className={styles["navbar-link"]} href=" ">
-                  <img src={cart_img} alt="Account" />
+                  <img src={account_img} alt="Account" />
                   Account
                 </a>
               </div>

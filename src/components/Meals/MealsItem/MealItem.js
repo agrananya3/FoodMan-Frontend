@@ -1,37 +1,32 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styles from "./MealItem.module.css";
-// import Button from "../../UI/Button";
 import AddSubtractButton from "../../UI/AddSubtractButton";
-
+import { cartActions } from "../../../Store/cart-slice";
 
 // Image imports
-// import mealImage from "../../../assets/delivery2.png";
 import veganImage from "../../../assets/vegetarian_mark.png";
-// import plusImg from "../../../assets/Plus.svg";
 import nonvegImg from "../../../assets/non_vegetarian_mark.png";
-import { useDispatch } from "react-redux";
-import { cartActions } from "../../../Store/Cart-slice";
 
 const MealItem = (props) => {
-
   const dispatch = useDispatch();
-
-  const addToCartHandler = ()=>{
-    dispatch(cartActions.addItem({
-      id: props.item.id,
-      name: props.item.name,
-      price: props.item.price,
-      discount:props.item.discount,
-      hotel_name:props.item.hotel_name
-    }));
+  const addCartItemHandler = () => {
+    dispatch(
+      cartActions.addItem({
+        id: props.item.id,
+        name: props.item.name,
+        price: props.item.price,
+        discount: props.item.discount,
+        hotel_name: props.item.hotel_name,
+      })
+    );
   };
-  const removeItemHandler=()=>{
+  const removeCartItemHandler = () => {
     dispatch(cartActions.removeItem(props.item.id));
-  }
-  
+  };
+
   const selling_price =
-    props.item.price -
-    (props.item.discount * props.item.price) / 100;
+    props.item.price - (props.item.discount * props.item.price) / 100;
   return (
     <li className={styles["meal-item"]}>
       <div className={styles["image-container"]}>
@@ -69,13 +64,14 @@ const MealItem = (props) => {
               ₹{props.item.price}
             </span>
           </p>
-             <AddSubtractButton
-                className={styles["add-subtract-button"]}
-                imageStyles={styles["add-subtract-img"]}
-                onAddItem={addToCartHandler}
-                onRemoveItem={removeItemHandler}
-                id={props.item.id}
-              />
+
+          <AddSubtractButton
+            className={styles["add-subtract-button"]}
+            imageStyles={styles["add-subtract-img"]}
+            onAddItem={addCartItemHandler}
+            onRemoveItem={removeCartItemHandler}
+            id={props.item.id}
+          />
         </div>
       </div>
     </li>

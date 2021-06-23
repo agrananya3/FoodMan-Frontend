@@ -1,13 +1,13 @@
-import {configureStore } from '@reduxjs/toolkit'
-
-import hotelSlice from './hotel-slice'
-import cartSlice from './Cart-slice';
+import { configureStore } from "@reduxjs/toolkit";
+import hotelSlice from "./hotel-slice";
+import cartSlice from "./cart-slice";
+import vegonlySlice from "./vegonly-slice";
 
 const store = configureStore({
-    reducer: {
-        hotel: hotelSlice.reducer,
-        cart: cartSlice.reducer,
-    }
+  reducer: {
+    hotel: hotelSlice.reducer,
+    cart: cartSlice.reducer,
+    vegonly: vegonlySlice.reducer,
+  },
 });
-
 export default store;

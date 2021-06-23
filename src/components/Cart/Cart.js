@@ -1,20 +1,17 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { cartActions } from "../../Store/Cart-slice";
 import "./Cart.css";
 import CartItem from "./CartItem";
-
+import { useSelector, useDispatch } from "react-redux";
+import { cartActions } from "../../Store/cart-slice";
 
 const Cart = () => {
-  const cartItems = useSelector(state => state.cart.items);
-  const totalAmount = useSelector(state => state.cart.totalAmount);
-  const totalQuantity = useSelector(state => state.cart.totalQuantity);
-
+  const cartItems = useSelector((state) => state.cart.items);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const dispatch = useDispatch();
-
-  const clearcartHandler=()=>{
-    dispatch(cartActions.clearbag());
-  }
+  const clearBagHandler = () => {
+    dispatch(cartActions.clearBag());
+  };
 
   return (
     <div>
@@ -23,7 +20,7 @@ const Cart = () => {
           Bag
           <span className="cart-count">{totalQuantity}</span>
         </h3>
-        <div className="clear-cart" onClick={clearcartHandler} >
+        <div className="clear-cart" onClick={clearBagHandler}>
           Clear Bag
         </div>
       </div>
@@ -32,12 +29,11 @@ const Cart = () => {
           <CartItem
             key={item.id}
             name={item.name}
-            quantity= {item.quantity}
+            quantity={item.quantity}
             price={item.price}
             discount={item.discount}
             id={item.id}
             hotel_name={item.hotel_name}
-
           />
         ))}
       </div>
