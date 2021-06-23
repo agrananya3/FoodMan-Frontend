@@ -1,17 +1,17 @@
 const MEALS_LIST = [
   {
-    hotel_id: 'h1',
+    hotel_id: "h1",
     hotel_name: "Kerla Restaurent",
-    dishes:[
+    dishes: [
       {
-      id: "m1",
-      name: "Mutton Curry",
-      price: 300,
-      discount: 20,
-      veg: true,
-      url: "https://c.ndtvimg.com/2020-07/kr6cq19_paneer_625x300_14_July_20.jpg",
-      description: "",
-      hotel_name: "Kerla Restaurent",
+        id: "m1",
+        name: "Mutton Curry",
+        price: 300,
+        discount: 20,
+        veg: true,
+        url: "https://c.ndtvimg.com/2020-07/kr6cq19_paneer_625x300_14_July_20.jpg",
+        description: "",
+        hotel_name: "Kerla Restaurent",
       },
       {
         id: "m2",
@@ -36,9 +36,9 @@ const MEALS_LIST = [
     ],
   },
   {
-    hotel_id: 'h2',
+    hotel_id: "h2",
     hotel_name: "Sidharth Family Restaurent",
-    dishes:[
+    dishes: [
       {
         id: "m4",
         name: "Chicken Hydrabadi",
@@ -52,7 +52,7 @@ const MEALS_LIST = [
       {
         id: "m5",
         name: "Chicken Tikka Masala",
-    
+
         price: 220,
         discount: 20,
         veg: false,
@@ -63,7 +63,7 @@ const MEALS_LIST = [
       {
         id: "m6",
         name: "Chicken Fry",
-    
+
         price: 110,
         discount: 20,
         veg: false,
@@ -71,17 +71,16 @@ const MEALS_LIST = [
         description: "",
         hotel_name: "Sidharth Family Restaurent",
       },
-
-    ]
+    ],
   },
   {
-    hotel_id: 'h3',
+    hotel_id: "h3",
     hotel_name: "Al Karim Chicken Center",
-    dishes:[
+    dishes: [
       {
         id: "m7",
         name: "Mutton Biryani",
-    
+
         price: 90,
         discount: 20,
         veg: false,
@@ -109,8 +108,8 @@ const MEALS_LIST = [
         description: "",
         hotel_name: "Al Karim Chicken Center",
       },
-    ]
-  }
+    ],
+  },
 ];
 
 export default MEALS_LIST;

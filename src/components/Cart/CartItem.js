@@ -1,28 +1,27 @@
 import React, { Fragment } from "react";
-
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../Store/cart-slice";
 import styles from "./CartItem.module.css";
 import AddSubtractButton from "../UI/AddSubtractButton";
-import { useDispatch } from "react-redux";
-import { cartActions } from "../../Store/Cart-slice";
 
 const CartItem = (props) => {
-  const sellingPrice = props.price - (props.discount * props.price) / 100;
-
   const dispatch = useDispatch();
-
-  const addToCartHandler = ()=>{
-    dispatch(cartActions.addItem({
-      id: props.id,
-      name: props.name,
-      price: props.price,
-      discount:props.discount,
-      hotel_name:props.hotel_name
-    }));
+  const addCartItemHandler = () => {
+    dispatch(
+      cartActions.addItem({
+        id: props.id,
+        name: props.name,
+        price: props.price,
+        discount: props.discount,
+        hotel_name: props.hotel_name,
+      })
+    );
   };
-  const removeItemHandler=()=>{
+  const removeCartItemHandler = () => {
     dispatch(cartActions.removeItem(props.id));
-  }
+  };
 
+  const sellingPrice = props.price - (props.discount * props.price) / 100;
   return (
     <Fragment>
       <li className={styles["cart-item"]}>
@@ -32,10 +31,12 @@ const CartItem = (props) => {
             ₹{sellingPrice}
             <span> ₹{props.price}</span>
           </p>
-          <AddSubtractButton className={styles["addsubtract-button"]}
-          id={props.id}
-          onAddItem={addToCartHandler}
-          onRemoveItem={removeItemHandler} />
+          <AddSubtractButton
+            className={styles["addsubtract-button"]}
+            id={props.id}
+            onAddItem={addCartItemHandler}
+            onRemoveItem={removeCartItemHandler}
+          />
         </div>
       </li>
     </Fragment>

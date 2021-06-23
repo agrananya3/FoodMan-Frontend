@@ -4,13 +4,12 @@ import MiddleColumn from "./components/Layout/MiddleColumn";
 import RightColumn from "./components/Layout/RightColumn";
 import Footer from "./components/Layout/Footer/Footer";
 import Navbar from "./components/Layout/Navbar/Navbar";
-import CartProvider from "./Store/CartProvider";
 
 import "./App.css";
 
 const App = () => {
   return (
-    <CartProvider>
+    <React.Fragment>
       <Navbar />
       <div className="container">
         <LeftColumn />
@@ -18,7 +17,7 @@ const App = () => {
         <RightColumn />
       </div>
       <Footer />
-    </CartProvider>
+    </React.Fragment>
   );
 };
 

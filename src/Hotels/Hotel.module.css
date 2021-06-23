@@ -4,8 +4,16 @@
     margin-bottom: 0.5rem;
 }
 
-.hotel a {
+.active {
+    color: #146eb4;
+}
+
+.inactive {
     color: rgb(80, 79, 79);
+}
+
+.hotel a {
+
     text-decoration: none;
 }
 
@@ -16,6 +24,11 @@
 .hotel span {
     font-size: 0.9rem;
     font-weight: 400;
-    color: rgb(90, 90, 90);
+    /* color: rgb(90, 90, 90); */
     font-style: italic;
 }
+
+/* 
+.hotel span:hover {
+    color: #146eb4;
+} */
