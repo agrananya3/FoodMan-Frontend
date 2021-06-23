@@ -11,3 +11,5 @@ const store = configureStore({
   },
 });
 export default store;
+
+// I in file name is capatilised.
