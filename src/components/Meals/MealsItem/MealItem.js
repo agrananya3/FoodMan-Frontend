@@ -25,8 +25,9 @@ const MealItem = (props) => {
     dispatch(cartActions.removeItem(props.item.id));
   };
 
-  const selling_price =
-    props.item.price - (props.item.discount * props.item.price) / 100;
+  const selling_price = Math.ceil(
+    props.item.price - (props.item.discount * props.item.price) / 100
+  );
   return (
     <li className={styles["meal-item"]}>
       <div className={styles["image-container"]}>
@@ -36,7 +37,9 @@ const MealItem = (props) => {
           alt="mealitem-img"
         />
         <div className={styles["discount-badge"]}>
-          <span className={styles["discount"]}>13 % OFF</span>
+          <span className={styles["discount"]}>
+            {props.item.discount} % OFF
+          </span>
         </div>
       </div>
       <div className={styles["item-contents"]}>

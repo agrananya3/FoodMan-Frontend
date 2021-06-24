@@ -21,7 +21,9 @@ const CartItem = (props) => {
     dispatch(cartActions.removeItem(props.id));
   };
 
-  const sellingPrice = props.price - (props.discount * props.price) / 100;
+  const sellingPrice = Math.ceil(
+    props.price - (props.discount * props.price) / 100
+  );
   return (
     <Fragment>
       <li className={styles["cart-item"]}>

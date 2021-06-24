@@ -5,8 +5,6 @@ const ToggleOn = (props) => {
     <span className={`${props.className}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="50"
-        height="50"
         fill="#146eb4"
         className="bi bi-toggle-on"
         viewBox="0 0 16 16"
