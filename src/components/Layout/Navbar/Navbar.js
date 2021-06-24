@@ -7,6 +7,7 @@ import logo_img from "../../../assets/delivery2.png";
 import customer_img from "../../../assets/contact2.png";
 import cart_img from "../../../assets/cart_inactive.svg";
 import account_img from "../../../assets/user.svg";
+import home_img from "../../../assets/home.svg";
 import { useSelector } from "react-redux";
 
 const Navbar = (props) => {
@@ -46,7 +47,9 @@ const Navbar = (props) => {
                 <a className={styles["navbar-link"]} href=" ">
                   <img src={cart_img} alt="Bag" />
                   Bag
-                  {totalQuantity !== 0 && <CartModal />}
+                  {totalQuantity !== 0 && (
+                    <CartModal className={styles["cart-modal"]} />
+                  )}
                 </a>
               </div>
 
@@ -63,16 +66,19 @@ const Navbar = (props) => {
       <div className={styles["mobile-nav"]}>
         <div>
           <a className={styles["navbar-link"]} href=" ">
-            <img src="./images/Home.svg" alt="Bag" />
+            <img src={home_img} alt="Bag" />
             Home
           </a>
           <a className={styles["navbar-link"]} href=" ">
-            <img src="./images/bag.svg" alt="Bag" />
+            <img src={cart_img} alt="Bag" />
             Bag
+            {totalQuantity !== 0 && (
+              <CartModal className={styles["cart-modal"]} />
+            )}
           </a>
 
           <a className={styles["navbar-link"]} href=" ">
-            <img src="./images/acoount.svg" alt="Account" />
+            <img src={account_img} alt="Account" />
             Account
           </a>
         </div>

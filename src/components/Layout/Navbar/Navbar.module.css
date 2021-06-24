@@ -7,7 +7,7 @@ header {
 .navbar {
     border-bottom: 1px solid #e6e6e6;
     padding: 16px 0;
-    margin: 0 12% 2%;
+    margin: 0 12%;
     background-color: #fff;
     height: 10%;
 
@@ -88,7 +88,7 @@ header {
     flex-direction: row;
     justify-content: space-around;
     width: 25%;
-    position: relative;
+    /* position: relative; */
 }
 
 .icon-container div {
@@ -120,7 +120,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
+    position: relative;
 }
 
 .navbar-link:active {
@@ -132,6 +132,11 @@ header {
 
 }
 
+.cart-modal {
+    position: absolute;
+    left: 23%;
+    top: 0px;
+}
 
 .mobile-nav {
 
@@ -160,9 +165,34 @@ header {
     margin: 0 2vw;
 }
 
+
+@media only screen and (max-width:1400px) {
+    .cart-modal {
+        left: 20%;
+    }
+}
+
+@media only screen and (max-width:1300px) {
+    .cart-modal {
+        left: 17%;
+    }
+}
+
 @media only screen and (max-width:1200px) {
     .navbar {
         margin: 0;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .cart-modal {
+        left: 17%;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    .cart-modal {
+        left: 10%;
     }
 }
 
@@ -176,6 +206,9 @@ header {
         width: 45vw;
     }
 
+    .cart-modal {
+        left: 0;
+    }
 }
 
 @media only screen and (max-width:600px) {

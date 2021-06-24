@@ -11,6 +11,7 @@ const Hotels = (props) => {
           name={hotel.hotel_name}
           totalDishes={hotel.dishes.length}
           id={hotel.hotel_id}
+          onClick={props.onClick}
         />
       ))}
     </ul>
