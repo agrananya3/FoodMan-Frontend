@@ -2,11 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import MealItem from "./MealsItem/MealItem";
 import dummyList from "../Meals/DummyMeals";
-import VegOnly from "../UI/VegOnly/VegOnly";
-import styles from "./AvailableMeals.module.css";
 
 const AvailableMeals = (props) => {
-  const hotelName = useSelector((state) => state.hotel.hotel_name);
   const hotelId = useSelector((state) => state.hotel.hotel_id);
   const veg = useSelector((state) => state.vegonly.veg);
 
@@ -19,18 +16,6 @@ const AvailableMeals = (props) => {
 
   return (
     <React.Fragment>
-      <div className={styles["hotel"]}>
-        <h3>
-          {hotelName}
-          <span className={styles["cart-count"]}>{requiredDishes.length}</span>
-        </h3>
-        <div className={styles["vegonly-wrapper"]}>
-          <VegOnly />
-          <span className={styles["veg-heading"]}>
-            <p>Veg Only</p>
-          </span>
-        </div>
-      </div>
       {requiredDishes.length === 0 && (
         <p>Opps!!! No Veg Items In This Restaurent </p>
       )}

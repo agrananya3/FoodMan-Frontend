@@ -8,6 +8,7 @@ const Hotel = (props) => {
   const dispatch = useDispatch();
   const changeHotel = (event) => {
     event.preventDefault();
+    props.onClick()
     dispatch(
       hotelActions.changeHotel({ id: props.id, hotel_name: props.name })
     );
