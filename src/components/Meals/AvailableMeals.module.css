@@ -27,3 +27,17 @@
     text-align: center;
     display: inline-block;
 }
+
+.vegonly-wrapper {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.veg-heading {
+    height: 2rem;
+    margin-left: 14px;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+}

@@ -24,7 +24,12 @@ const AvailableMeals = (props) => {
           {hotelName}
           <span className={styles["cart-count"]}>{requiredDishes.length}</span>
         </h3>
-        <VegOnly />
+        <div className={styles["vegonly-wrapper"]}>
+          <VegOnly />
+          <span className={styles["veg-heading"]}>
+            <p>Veg Only</p>
+          </span>
+        </div>
       </div>
       {requiredDishes.length === 0 && (
         <p>Opps!!! No Veg Items In This Restaurent </p>
