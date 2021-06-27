@@ -39,42 +39,6 @@
     margin: 0 1rem 10px 2rem;
     border-bottom: 2px solid #0a010149;
 }
-
 .cart-footer {
     margin: 0 1rem 10px 2rem;
-}
-
-.cart-total {
-    margin-bottom: 20px;
-    color: #1a181e;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 500;
-    padding-top: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.check-btn {
-    display: flex;
-    justify-content: center;
-}
-
-.checkout {
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 22px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    transition: .15s ease-in-out;
-    background-color: transparent;
-    background-color: #146eb4;
-    text-align: center;
-    outline: none;
-    border: none;
-    width: 85%;
 }

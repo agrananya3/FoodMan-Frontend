@@ -28,7 +28,16 @@
     font-style: italic;
 }
 
-/* 
-.hotel span:hover {
-    color: #146eb4;
-} */
+.cart-count {
+    background-color: #f39b36;
+    border-radius: 4px;
+    padding: 2px 6px;
+    color: #fff;
+    margin-left: 6px;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+    min-width: 29px;
+    text-align: center;
+    display: inline-block;
+}

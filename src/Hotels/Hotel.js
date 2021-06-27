@@ -34,10 +34,10 @@ const Hotel = (props) => {
         {props.name}
       </a>
       <span
-        className={`${props.id === hotel_id ? styles.active : styles.inactive}`}
-      >
+        className={`${props.id === hotel_id ? styles.active : styles.inactive } ${styles["cart-count"]}` }
+      >{totalDishes}
         <br />
-        Dishes available: {totalDishes}
+
       </span>
     </li>
   );

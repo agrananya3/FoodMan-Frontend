@@ -3,6 +3,7 @@ import "./Cart.css";
 import CartItem from "./CartItem";
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../Store/cart-slice"
+import BagTotal from "../BagTotal";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -38,14 +39,8 @@ const Cart = () => {
         ))}
       </div>
       <div className="cart-footer">
-        <div className="cart-total">
-          <span>Sub Total</span>
-          <span>₹{totalAmount}</span>
-        </div>
-        <div className="check-btn">
-          <div className="checkout">Proceed To Checkout</div>
-        </div>
-      </div>
+     {totalAmount>0 &&<BagTotal />}
+     </div>
     </div>
   );
 };
