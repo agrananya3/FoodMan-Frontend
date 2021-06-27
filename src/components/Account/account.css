@@ -1,0 +1,50 @@
+.acc-wrapper{
+    padding: 24px;
+}
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:10px ;
+}
+.head h2{
+    margin: 5px 0;
+}
+
+.input-edit {
+    border: none !important;
+    border-bottom: 2px solid #ccc !important;
+    padding: 6px 0px;
+    opacity: 0.8;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .input-edit:focus {
+    border-bottom-color: #5c7dda !important;
+    box-shadow: none;
+    outline: 0;
+  }
+  
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    background-color: transparent;
+    background-color: #146eb4;
+    text-align: center;
+    outline: none;
+    border: none;
+    width: 25%;
+}

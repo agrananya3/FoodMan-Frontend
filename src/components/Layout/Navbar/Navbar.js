@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 import CartModal from "../../Cart/CartModal/CartModal";
 import styles from "./Navbar.module.css";
+import Account from "../../Account/Account";
 
 // Image imports
 import logo_img from "../../../assets/delivery2.png";
@@ -11,11 +12,24 @@ import account_img from "../../../assets/user.svg";
 import home_img from "../../../assets/home.svg";
 import { useSelector } from "react-redux";
 
+
 const Navbar = (props) => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+
+  const [accshown,setaccHandler]=useState(false);
+
+    const acctHandler =()=>{
+        if(accshown)
+            setaccHandler(false);
+        else    
+            setaccHandler(true);
+    }
+    
+
   return (
     <React.Fragment>
       <header>
+      {accshown && <Account onClick={acctHandler} />}
         <nav className={styles.navbar}>
           <div className={styles["nav-container"]}>
             <div className={styles["logo-container"]}>
@@ -53,12 +67,13 @@ const Navbar = (props) => {
                   )}
                 </a>
               </div>
-
-              <div>
-                <a className={styles["navbar-link"]} href=" ">
+              
+              <div onClick={acctHandler}>
+                <span className={styles["navbar-link"]}>
                   <img src={account_img} alt="Account" />
                   Account
-                </a>
+                </span>
+                
               </div>
             </div>
           </div>
