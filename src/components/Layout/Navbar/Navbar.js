@@ -1,4 +1,5 @@
 import React from "react";
+
 import CartModal from "../../Cart/CartModal/CartModal";
 import styles from "./Navbar.module.css";
 

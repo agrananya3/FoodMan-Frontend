@@ -8,7 +8,7 @@ const MEALS_LIST = [
         name: "Mutton Curry",
         price: 300,
         discount: 20,
-        veg: true,
+        veg: false,
         url: "https://c.ndtvimg.com/2020-07/kr6cq19_paneer_625x300_14_July_20.jpg",
         description: "",
         hotel_name: "Kerla Restaurent",
