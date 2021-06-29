@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import ReactDom from "react-dom";
 import App from "./App";
@@ -6,8 +7,10 @@ import store from "./Store/Index";
 
 import "./index.css";
 ReactDom.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById("root")
 );

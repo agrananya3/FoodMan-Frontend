@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import { useSelector } from "react-redux";
+import { NavLink, Link } from "react-router-dom";
 import CartModal from "../../Cart/CartModal/CartModal";
 import styles from "./Navbar.module.css";
 import Account from "../../Account/Account";
@@ -10,39 +11,38 @@ import customer_img from "../../../assets/contact2.png";
 import cart_img from "../../../assets/cart_inactive.svg";
 import account_img from "../../../assets/user.svg";
 import home_img from "../../../assets/home.svg";
-import { useSelector } from "react-redux";
-
 
 const Navbar = (props) => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
-  const [accshown,setaccHandler]=useState(false);
+  const [accshown, setaccHandler] = useState(false);
 
-    const acctHandler =()=>{
-        if(accshown)
-            setaccHandler(false);
-        else    
-            setaccHandler(true);
-    }
-    
+  const acctHandler = () => {
+    if (accshown) setaccHandler(false);
+    else setaccHandler(true);
+  };
 
   return (
     <React.Fragment>
       <header>
-      {accshown && <Account onClick={acctHandler} />}
+        {accshown && <Account onClick={acctHandler} />}
         <nav className={styles.navbar}>
           <div className={styles["nav-container"]}>
             <div className={styles["logo-container"]}>
               <div className={styles["brand-container"]}>
                 <div className={styles["logo"]}>
-                  <img
-                    className={styles["nav-logo"]}
-                    src={logo_img}
-                    alt="logo-img"
-                  />
+                  <Link to="/">
+                    <img
+                      className={styles["nav-logo"]}
+                      src={logo_img}
+                      alt="logo-img"
+                    />
+                  </Link>
                 </div>
                 <div className={styles["brand-name"]}>
-                  <h1>The Food's Man</h1>
+                  <Link to="/" className={styles.brandName}>
+                    The Food's Man
+                  </Link>
                 </div>
               </div>
 
@@ -52,28 +52,36 @@ const Navbar = (props) => {
                   <input
                     className={styles["search-bar"]}
                     type="text"
-                    placeholder="Search For Products"
+                    placeholder="Search For Meals"
                   />
                 </form>
               </div>
             </div>
             <div className={styles["icon-container"]}>
               <div>
-                <a className={styles["navbar-link"]} href=" ">
+                <NavLink
+                  activeClassName={styles.active}
+                  className={styles["navbar-link"]}
+                  to="/bag"
+                >
                   <img src={cart_img} alt="Bag" />
                   Bag
                   {totalQuantity !== 0 && (
                     <CartModal className={styles["cart-modal"]} />
                   )}
-                </a>
+                </NavLink>
               </div>
-              
-              <div onClick={acctHandler}>
-                <span className={styles["navbar-link"]}>
+
+              <div>
+                <NavLink
+                  activeClassName={styles.active}
+                  className={styles["navbar-link"]}
+                  to="/orders"
+                  onClick={acctHandler}
+                >
                   <img src={account_img} alt="Account" />
                   Account
-                </span>
-                
+                </NavLink>
               </div>
             </div>
           </div>

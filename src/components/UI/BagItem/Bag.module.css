@@ -1,0 +1,104 @@
+.empty-bag {
+    text-align: center;
+}
+
+.empty-bag div {
+    width: 25rem;
+
+    margin: 2% auto;
+}
+
+.empty-bag div h4 {
+    margin: 2% 0 0 0;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    color: rgb(39, 38, 38);
+}
+
+.empty-bag div p {
+    margin: 2% 0 0 0;
+    font-family: sans-serif;
+    color: gray;
+
+}
+
+.empty-bag div img {
+    width: 20rem;
+    position: relative;
+    left: -4px;
+}
+
+.empty-bag div button {
+    width: 60%;
+    padding: 4% 0;
+    margin-top: 2rem;
+    background-color: #146eb4;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-family: sans-serif;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.empty-bag div button:hover {
+    background-color: #2d8fda;
+}
+
+/* If cart contains any item */
+
+
+
+.bagitem {
+    width: 50%;
+    margin: 2% 25%;
+    /* padding: 0 1rem; */
+}
+
+.bag-header {
+    border-bottom: 2px solid #0a010149;
+    padding: 0 0 8px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+}
+
+.bag-header h3 {
+    margin-left: 1rem;
+}
+
+.bag-count {
+    background-color: #146eb4;
+    border-radius: 4px;
+    padding: 2px 6px;
+    color: #fff;
+    margin-left: 6px;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+    min-width: 29px;
+    text-align: center;
+    display: inline-block;
+}
+
+.clear-bag {
+    font-size: 16px;
+    line-height: 20px;
+    height: 18px;
+    border-bottom: 1px solid #4d4d4d;
+    color: #4d4d4d;
+    margin-right: 1rem;
+}
+
+.clear-bag:hover {
+    cursor: pointer;
+}
+
+
+.bag-footer {
+    padding: 0 1rem;
+}
