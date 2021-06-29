@@ -2,8 +2,11 @@ import React from "react";
 import "./Cart.css";
 import CartItem from "./CartItem";
 import { useSelector, useDispatch } from "react-redux";
-import { cartActions } from "../../Store/cart-slice"
+import { cartActions } from "../../Store/cart-slice";
 import BagTotal from "../BagTotal";
+
+// Image Imports
+import cartEmpty_img from "../../assets/cart-empty.svg";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -26,21 +29,27 @@ const Cart = () => {
         </div>
       </div>
       <div className="cart-body">
-        {cartItems.map((item) => (
-          <CartItem
-            key={item.id}
-            name={item.name}
-            quantity={item.quantity}
-            price={item.price}
-            discount={item.discount}
-            id={item.id}
-            hotel_name={item.hotel_name}
-          />
-        ))}
+        {totalQuantity === 0 ? (
+          <div className="empty-cart">
+            <img src={cartEmpty_img} alt="cart is empty" />
+            <h4>Your bag is empty</h4>
+            <p>Looks like you haven’t made your choice yet</p>
+          </div>
+        ) : (
+          cartItems.map((item) => (
+            <CartItem
+              key={item.id}
+              name={item.name}
+              quantity={item.quantity}
+              price={item.price}
+              discount={item.discount}
+              id={item.id}
+              hotel_name={item.hotel_name}
+            />
+          ))
+        )}
       </div>
-      <div className="cart-footer">
-     {totalAmount>0 &&<BagTotal />}
-     </div>
+      <div className="cart-footer">{totalAmount > 0 && <BagTotal />}</div>
     </div>
   );
 };

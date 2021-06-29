@@ -39,6 +39,27 @@
     margin: 0 1rem 10px 2rem;
     border-bottom: 2px solid #0a010149;
 }
+
+.empty-cart img {
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+    left: -4px;
+}
+
+.empty-cart h4,
+.empty-cart p {
+    text-align: center;
+    font-family: sans-serif;
+    padding: 4px 1rem;
+    margin: 0 0;
+}
+
+.empty-cart p {
+    color: grey;
+    font-size: 0.9rem;
+}
+
 .cart-footer {
     margin: 0 1rem 10px 2rem;
 }
