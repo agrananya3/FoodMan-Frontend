@@ -20,7 +20,7 @@ const Bag = () => {
     dispatch(cartActions.clearBag());
   };
   const takeToHomePage = () => {
-    history.push("/");
+    history.push("/home");
   };
 
   return (

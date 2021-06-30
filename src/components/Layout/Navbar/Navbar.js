@@ -17,7 +17,8 @@ const Navbar = (props) => {
 
   const [accshown, setaccHandler] = useState(false);
 
-  const acctHandler = () => {
+  const acctHandler = (event) => {
+    event.preventDefault();
     if (accshown) setaccHandler(false);
     else setaccHandler(true);
   };
@@ -31,7 +32,7 @@ const Navbar = (props) => {
             <div className={styles["logo-container"]}>
               <div className={styles["brand-container"]}>
                 <div className={styles["logo"]}>
-                  <Link to="/">
+                  <Link to="/home">
                     <img
                       className={styles["nav-logo"]}
                       src={logo_img}
@@ -40,7 +41,7 @@ const Navbar = (props) => {
                   </Link>
                 </div>
                 <div className={styles["brand-name"]}>
-                  <Link to="/" className={styles.brandName}>
+                  <Link to="/home" className={styles.brandName}>
                     The Food's Man
                   </Link>
                 </div>
@@ -73,15 +74,14 @@ const Navbar = (props) => {
               </div>
 
               <div>
-                <NavLink
-                  activeClassName={styles.active}
+                <a
+                  href=" "
                   className={styles["navbar-link"]}
-                  to="/orders"
                   onClick={acctHandler}
                 >
                   <img src={account_img} alt="Account" />
                   Account
-                </NavLink>
+                </a>
               </div>
             </div>
           </div>
@@ -89,22 +89,36 @@ const Navbar = (props) => {
       </header>
       <div className={styles["mobile-nav"]}>
         <div>
-          <a className={styles["navbar-link"]} href=" ">
+          <NavLink
+            to="/home"
+            activeClassName={styles.active}
+            className={styles["navbar-link"]}
+            href=" "
+          >
             <img src={home_img} alt="Bag" />
             Home
-          </a>
-          <a className={styles["navbar-link"]} href=" ">
+          </NavLink>
+          <NavLink
+            to="/bag"
+            activeClassName={styles.active}
+            className={styles["navbar-link"]}
+            href=" "
+          >
             <img src={cart_img} alt="Bag" />
             Bag
             {totalQuantity !== 0 && (
               <CartModal className={styles["cart-modal"]} />
             )}
-          </a>
+          </NavLink>
 
-          <a className={styles["navbar-link"]} href=" ">
+          <NavLink
+            activeClassName={styles.active}
+            className={styles["navbar-link"]}
+            to="/orders"
+          >
             <img src={account_img} alt="Account" />
             Account
-          </a>
+          </NavLink>
         </div>
       </div>
     </React.Fragment>
