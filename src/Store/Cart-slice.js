@@ -6,8 +6,15 @@ const cartSlice = createSlice({
     items: [],
     totalQuantity: 0,
     totalAmount: 0,
+    changed:false,
   },
   reducers: {
+    replaceCart(state, action) {
+      state.totalQuantity = action.payload.totalQuantity;
+      state.items = action.payload.items;
+      state.totalAmount = action.payload.totalAmount;
+
+    },
     addItem(state, action) {
       const newItem = action.payload;
       const existingItem = state.items.find((item) => item.id === newItem.id);
@@ -17,6 +24,7 @@ const cartSlice = createSlice({
       if (!existingItem) {
         if (state.totalQuantity === 0) {
           state.totalQuantity++;
+          state.changed=true;
           state.items.push({
             name: newItem.name,
             id: newItem.id,
@@ -30,6 +38,7 @@ const cartSlice = createSlice({
           const hotel = newItem.hotel_name;
           if (state.items[0].hotel_name === hotel) {
             state.totalQuantity++;
+            state.changed=true;
             state.items.push({
               name: newItem.name,
               id: newItem.id,
@@ -48,6 +57,7 @@ const cartSlice = createSlice({
         }
       } else {
         state.totalQuantity++;
+        state.changed=true;
         existingItem.quantity++;
         existingItem.totalPrice = existingItem.totalPrice + newItem.price;
       }
@@ -56,6 +66,7 @@ const cartSlice = createSlice({
       const id = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
       state.totalQuantity--;
+      state.changed=true;
       if (existingItem.quantity === 1) {
         state.items = state.items.filter((item) => item.id !== id);
       } else {
@@ -71,6 +82,7 @@ const cartSlice = createSlice({
       state.items = [];
       state.totalAmount = 0;
       state.totalQuantity = 0;
+      state.changed=true;
     },
   },
 });
